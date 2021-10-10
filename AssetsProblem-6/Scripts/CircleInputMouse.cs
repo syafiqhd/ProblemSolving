@@ -5,6 +5,7 @@ using UnityEngine;
 public class CircleInputMouse : MonoBehaviour
 {
     public Transform point;
+    public float speed;
     private Rigidbody2D rigidBody2D;
     private Vector3 cursorPos;
     private Vector3 direction;
@@ -27,7 +28,7 @@ public class CircleInputMouse : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rigidBody2D.velocity = new Vector2(dir.x * 15, dir.y * 15);
+            rigidBody2D.velocity = new Vector2(dir.x * speed, dir.y * speed);
         }
     }
 }
