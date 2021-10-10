@@ -600,6 +600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 2031556615912525327, guid: 9d307010d1a2d37448bd7cf4fcc2cf62, type: 3}
+  timeSpawn: 1
   maxItem: 25
   scoreText: {fileID: 391129868}
 --- !u!1 &1521116564
