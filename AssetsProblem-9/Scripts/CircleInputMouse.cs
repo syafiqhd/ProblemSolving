@@ -9,6 +9,7 @@ public class CircleInputMouse : MonoBehaviour
     private Rigidbody2D rigidBody2D;
     private Vector3 cursorPos;
     private Vector3 direction;
+    private bool spamCheck;
 
     void Start()
     {
@@ -26,9 +27,17 @@ public class CircleInputMouse : MonoBehaviour
 
     void PushBall(Vector3 dir)
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && spamCheck == false)
         {
             rigidBody2D.velocity = new Vector2(dir.x * speed, dir.y * speed);
+            spamCheck = true;
+            StartCoroutine(SpamCheck());
         }
+    }
+
+    IEnumerator SpamCheck() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        spamCheck = false;
     }
 }

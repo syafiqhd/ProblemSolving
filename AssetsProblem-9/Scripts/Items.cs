@@ -12,5 +12,11 @@ public class Items : MonoBehaviour
             GameManager.itemCount--;
             Destroy(gameObject);
         }
+        else if (other.CompareTag("Enemy"))
+        {
+            GameManager.score--;
+            GameManager.itemCount--;
+            Destroy(gameObject);
+        }
     }
 }
